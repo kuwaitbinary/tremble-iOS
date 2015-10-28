@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF7E54B51BE0C4C6008CC08F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */; };
+		C31559701BE0C0710056214B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315596F1BE0C0710056214B /* AppDelegate.swift */; };
+		C31559751BE0C0710056214B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31559731BE0C0710056214B /* Main.storyboard */; };
+		C31559771BE0C0710056214B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31559761BE0C0710056214B /* Assets.xcassets */; };
+		C315597A1BE0C0710056214B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31559781BE0C0710056214B /* LaunchScreen.storyboard */; };
+		C315598C1BE0C1320056214B /* ActiveSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559841BE0C1320056214B /* ActiveSession.swift */; };
+		C315598D1BE0C1320056214B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559851BE0C1320056214B /* Course.swift */; };
+		C315598E1BE0C1320056214B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559861BE0C1320056214B /* Location.swift */; };
+		C315598F1BE0C1320056214B /* SessClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559871BE0C1320056214B /* SessClass.swift */; };
+		C31559901BE0C1320056214B /* Trainee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559881BE0C1320056214B /* Trainee.swift */; };
+		C31559911BE0C1320056214B /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559891BE0C1320056214B /* Trainer.swift */; };
+		C31559921BE0C1320056214B /* WavaDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315598A1BE0C1320056214B /* WavaDate.swift */; };
+		C31559931BE0C1320056214B /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315598B1BE0C1320056214B /* Zone.swift */; };
+		C31559951BE0C13F0056214B /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559941BE0C13F0056214B /* ConnectionManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C315596C1BE0C0700056214B /* Tremble-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tremble-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C315596F1BE0C0710056214B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C31559741BE0C0710056214B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31559761BE0C0710056214B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C31559791BE0C0710056214B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C315597B1BE0C0710056214B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31559841BE0C1320056214B /* ActiveSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveSession.swift; sourceTree = "<group>"; };
+		C31559851BE0C1320056214B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		C31559861BE0C1320056214B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C31559871BE0C1320056214B /* SessClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessClass.swift; sourceTree = "<group>"; };
+		C31559881BE0C1320056214B /* Trainee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainee.swift; sourceTree = "<group>"; };
+		C31559891BE0C1320056214B /* Trainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
+		C315598A1BE0C1320056214B /* WavaDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavaDate.swift; sourceTree = "<group>"; };
+		C315598B1BE0C1320056214B /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		C31559941BE0C13F0056214B /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C31559691BE0C0700056214B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C31559631BE0C0700056214B = {
+			isa = PBXGroup;
+			children = (
+				C315596E1BE0C0710056214B /* Tremble-iOS */,
+				C315596D1BE0C0700056214B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C315596D1BE0C0700056214B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C315596C1BE0C0700056214B /* Tremble-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C315596E1BE0C0710056214B /* Tremble-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C31559831BE0C1110056214B /* Controller */,
+				C31559821BE0C0EA0056214B /* Utilities */,
+				C31559811BE0C0E50056214B /* Model */,
+				C315596F1BE0C0710056214B /* AppDelegate.swift */,
+				C31559731BE0C0710056214B /* Main.storyboard */,
+				C31559761BE0C0710056214B /* Assets.xcassets */,
+				C31559781BE0C0710056214B /* LaunchScreen.storyboard */,
+				C315597B1BE0C0710056214B /* Info.plist */,
+			);
+			path = "Tremble-iOS";
+			sourceTree = "<group>";
+		};
+		C31559811BE0C0E50056214B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C31559841BE0C1320056214B /* ActiveSession.swift */,
+				C31559851BE0C1320056214B /* Course.swift */,
+				C31559861BE0C1320056214B /* Location.swift */,
+				C31559871BE0C1320056214B /* SessClass.swift */,
+				C31559881BE0C1320056214B /* Trainee.swift */,
+				C31559891BE0C1320056214B /* Trainer.swift */,
+				C315598A1BE0C1320056214B /* WavaDate.swift */,
+				C315598B1BE0C1320056214B /* Zone.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C31559821BE0C0EA0056214B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C31559941BE0C13F0056214B /* ConnectionManager.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		C31559831BE0C1110056214B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C315596B1BE0C0700056214B /* Tremble-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C315597E1BE0C0710056214B /* Build configuration list for PBXNativeTarget "Tremble-iOS" */;
+			buildPhases = (
+				C31559681BE0C0700056214B /* Sources */,
+				C31559691BE0C0700056214B /* Frameworks */,
+				C315596A1BE0C0700056214B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tremble-iOS";
+			productName = "Tremble-iOS";
+			productReference = C315596C1BE0C0700056214B /* Tremble-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C31559641BE0C0700056214B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Techzone;
+				TargetAttributes = {
+					C315596B1BE0C0700056214B = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = C31559671BE0C0700056214B /* Build configuration list for PBXProject "Tremble-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C31559631BE0C0700056214B;
+			productRefGroup = C315596D1BE0C0700056214B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C315596B1BE0C0700056214B /* Tremble-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C315596A1BE0C0700056214B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C315597A1BE0C0710056214B /* LaunchScreen.storyboard in Resources */,
+				C31559771BE0C0710056214B /* Assets.xcassets in Resources */,
+				C31559751BE0C0710056214B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C31559681BE0C0700056214B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31559901BE0C1320056214B /* Trainee.swift in Sources */,
+				C315598F1BE0C1320056214B /* SessClass.swift in Sources */,
+				C315598D1BE0C1320056214B /* Course.swift in Sources */,
+				C31559921BE0C1320056214B /* WavaDate.swift in Sources */,
+				C315598E1BE0C1320056214B /* Location.swift in Sources */,
+				C31559911BE0C1320056214B /* Trainer.swift in Sources */,
+				C31559931BE0C1320056214B /* Zone.swift in Sources */,
+				C315598C1BE0C1320056214B /* ActiveSession.swift in Sources */,
+				C31559951BE0C13F0056214B /* ConnectionManager.swift in Sources */,
+				C31559701BE0C0710056214B /* AppDelegate.swift in Sources */,
+				BF7E54B51BE0C4C6008CC08F /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C31559731BE0C0710056214B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31559741BE0C0710056214B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C31559781BE0C0710056214B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31559791BE0C0710056214B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C315597C1BE0C0710056214B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C315597D1BE0C0710056214B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C315597F1BE0C0710056214B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tremble-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techzonecs.Tremble-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C31559801BE0C0710056214B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tremble-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techzonecs.Tremble-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C31559671BE0C0700056214B /* Build configuration list for PBXProject "Tremble-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C315597C1BE0C0710056214B /* Debug */,
+				C315597D1BE0C0710056214B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C315597E1BE0C0710056214B /* Build configuration list for PBXNativeTarget "Tremble-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C315597F1BE0C0710056214B /* Debug */,
+				C31559801BE0C0710056214B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C31559641BE0C0700056214B /* Project object */;
+}
