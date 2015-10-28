@@ -13,7 +13,7 @@ class ConnectionManager {
     func login(id:String, password:String, completionHandler:(validData:Bool) -> ()) {
         
         let requestBody = "id_trainee=" + id + "&password=" + password
-        let requestUrl = ""
+        let requestUrl = "http://localhost:8080/TrembleBackend/Login"
         
         request(requestBody, url: requestUrl) {
             
