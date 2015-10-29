@@ -67,9 +67,6 @@ class SessionTableViewController: UITableViewController {
             return 0
         }
         
-        print("Session count:")
-        print(mySessionInfo!.count)
-        
         return mySessionInfo!.count
     }
 
@@ -101,6 +98,10 @@ class SessionTableViewController: UITableViewController {
     }
 
 
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
