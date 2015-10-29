@@ -43,6 +43,38 @@ class ConnectionManager {
         
     }
     
+    func getUserSession(completionHandler:(sessionInfo:[ActiveSession]) -> ()) {
+        
+        //        let defaultData = NSUserDefaults.standardUserDefaults()
+        //       let id = defaultData.objectForKey("SISID")?.description
+        let id = "1"
+        
+        let requestBody = "id_trainee=" + id
+        let requestUrl = "http://192.168.1.188:8080/TrembleBackend/GetSessions"
+        
+        request(requestBody, url: requestUrl) {
+            
+            responseData in
+            
+            let json = JSON(responseData)
+            
+            
+            //Array of session info
+            var sessionInfoArray = [ActiveSession]()
+            
+            //getting JSON Data
+            let location = json["result_data"][0]["location_name"].string!
+            let date = json["result_data"][0]["wave_date"].string!
+            
+            sessionInfoArray.append(ActiveSession(location: location, date: date))
+            
+            
+            completionHandler(sessionInfo: sessionInfoArray)
+            
+        }
+        
+    }
+    
     func request(requestBody:String, url:String, completionHandler: (responseData:NSDictionary) -> ()) {
         
         let request = NSMutableURLRequest()

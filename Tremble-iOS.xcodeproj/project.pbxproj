@@ -23,7 +23,6 @@
 		C31559931BE0C1320056214B /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315598B1BE0C1320056214B /* Zone.swift */; };
 		C31559951BE0C13F0056214B /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31559941BE0C13F0056214B /* ConnectionManager.swift */; };
 		C3B6CD521BE20A8400CEE56B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B6CD511BE20A8400CEE56B /* SwiftyJSON.swift */; };
-		C3B6CD541BE20E6200CEE56B /* SessionConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B6CD531BE20E6200CEE56B /* SessionConnection.swift */; };
 		C3DB09321BE0D2AE002F2174 /* SessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB09311BE0D2AE002F2174 /* SessionTableViewController.swift */; };
 		C3DB09341BE0E311002F2174 /* rectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB09331BE0E311002F2174 /* rectangleView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		C315598B1BE0C1320056214B /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		C31559941BE0C13F0056214B /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		C3B6CD511BE20A8400CEE56B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		C3B6CD531BE20E6200CEE56B /* SessionConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionConnection.swift; sourceTree = "<group>"; };
 		C3DB09311BE0D2AE002F2174 /* SessionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewController.swift; sourceTree = "<group>"; };
 		C3DB09331BE0E311002F2174 /* rectangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rectangleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +113,6 @@
 				C3B6CD511BE20A8400CEE56B /* SwiftyJSON.swift */,
 				C31559941BE0C13F0056214B /* ConnectionManager.swift */,
 				C3DB09331BE0E311002F2174 /* rectangleView.swift */,
-				C3B6CD531BE20E6200CEE56B /* SessionConnection.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -207,7 +204,6 @@
 				C3B6CD521BE20A8400CEE56B /* SwiftyJSON.swift in Sources */,
 				C315598D1BE0C1320056214B /* Course.swift in Sources */,
 				C31559921BE0C1320056214B /* WavaDate.swift in Sources */,
-				C3B6CD541BE20E6200CEE56B /* SessionConnection.swift in Sources */,
 				C315598E1BE0C1320056214B /* Location.swift in Sources */,
 				C31559911BE0C1320056214B /* Trainer.swift in Sources */,
 				C31559931BE0C1320056214B /* Zone.swift in Sources */,

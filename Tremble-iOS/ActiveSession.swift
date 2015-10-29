@@ -10,14 +10,31 @@ import Foundation
 
 class ActiveSession {
     
-    var idSession:Int
+//    var idSession:Int
+//    
+//    init (idSession:Int) {
+//        
+//        self.idSession = idSession
+//        
+//    }
     
-    init (idSession:Int) {
-        
-        self.idSession = idSession
-        
+    
+    
+    var location: String
+    var date: String
+    
+    init(){
+        location = ""
+        date = ""
     }
     
+    init (location:String, date:String ) {
+        
+        self.location = location
+        self.date = date
+        
+    }
+
     
     
 }

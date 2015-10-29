@@ -12,9 +12,26 @@ import UIKit
 
 class SessionTableViewController: UITableViewController {
 
-    let manager = SessionConnection()
-    var mySessionInfo:[SessionInfo]?
+    let manager = ConnectionManager()
+    var mySessionInfo:[ActiveSession]?
 
+    override func viewDidAppear(animated: Bool) {
+        
+        manager.getUserSession { (sessionInfo) -> () in
+            
+            print("I AM IN THE SESSION TABLE")
+            print(sessionInfo[0].location)
+            print(sessionInfo[0].date)
+            
+            self.mySessionInfo = sessionInfo
+            
+            //print("mySssionInfo: ")
+            //print(self.mySessionInfo![0].date)
+            
+            self.tableView.reloadData()
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +45,7 @@ class SessionTableViewController: UITableViewController {
         //self.navigationController!.view.drawRect(CGRectMake(89.4,199.8,200,100))
 
      
-        manager.getUserSession { (sessionInfo) -> () in
-        
-            print("I AM IN THE SESSION TABLE")
-            print(sessionInfo[0].location)
-            print(sessionInfo[0].date)
-            
-            self.mySessionInfo = sessionInfo
-            
-            //print("mySssionInfo: ")
-            //print(self.mySessionInfo![0].date)
-            
-            self.tableView.reloadData()
-            
-        }
-
-
+    
         
         
     }
@@ -66,6 +68,8 @@ class SessionTableViewController: UITableViewController {
         if self.mySessionInfo == nil {
             return 0
         }
+        
+        print(mySessionInfo!.count)
         
         return mySessionInfo!.count
     }
