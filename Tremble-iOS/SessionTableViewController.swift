@@ -8,11 +8,6 @@
 
 import UIKit
 
-class MySessionCell: UITableViewCell {
- 
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-}
 
 
 class SessionTableViewController: UITableViewController {
@@ -85,37 +80,22 @@ class SessionTableViewController: UITableViewController {
 
         if self.mySessionInfo != nil && self.mySessionInfo!.count >= indexPath.row {
             
-            /*
-            mainLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 220.0, 15.0)] autorelease];
-            mainLabel.tag = MAINLABEL_TAG;
-            mainLabel.font = [UIFont systemFontOfSize:14.0];
-            mainLabel.textAlignment = UITextAlignmentRight;
-            mainLabel.textColor = [UIColor blackColor];
-            [cell.contentView addSubview:mainLabel];
-*/
+
            let mainLabel = UILabel(frame: CGRectMake(0.0,100.0,220.0,30.0))
-           // mainLabel.tag = MAINLABEL_TAG
             mainLabel.font = UIFont.systemFontOfSize(14.0)
-            // mainLabel.textAlignment = UITextAlignmentRight
             mainLabel.textColor = UIColor.blackColor()
             mainLabel.text = mySessionInfo![0].location
             cell.contentView.addSubview(mainLabel)
             
             let dateLabel = UILabel(frame: CGRectMake(100.0,100.0,220.0,30.0))
-            // mainLabel.tag = MAINLABEL_TAG
             dateLabel.font = UIFont.systemFontOfSize(14.0)
-            // mainLabel.textAlignment = UITextAlignmentRight
             dateLabel.textColor = UIColor.blackColor()
             dateLabel.text = mySessionInfo![0].date
             cell.contentView.addSubview(dateLabel)
             
             
         }
-        
-        
-        
-        
-      
+     
 
         return cell
     }
