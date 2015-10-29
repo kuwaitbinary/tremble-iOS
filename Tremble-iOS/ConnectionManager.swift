@@ -10,10 +10,12 @@ import Foundation
 
 class ConnectionManager {
     
+    private let hostingUrl = "http://localhost:8080/"
+    
     func login(id:String, password:String, completionHandler:(validData:Bool) -> ()) {
         
         let requestBody = "id_trainee=" + id + "&password=" + password
-        let requestUrl = "http://localhost:8080/TrembleBackend/Login"
+        let requestUrl = hostingUrl + "TrembleBackend/Login"
         
         request(requestBody, url: requestUrl) {
             
@@ -45,19 +47,17 @@ class ConnectionManager {
     
     func getUserSession(completionHandler:(sessionInfo:[ActiveSession]) -> ()) {
         
-        //        let defaultData = NSUserDefaults.standardUserDefaults()
-        //       let id = defaultData.objectForKey("SISID")?.description
-        let id = "1"
+        let defaultData = NSUserDefaults.standardUserDefaults()
+        let id = defaultData.objectForKey("SISID")?.description
         
-        let requestBody = "id_trainee=" + id
-        let requestUrl = "http://192.168.1.188:8080/TrembleBackend/GetSessions"
+        let requestBody = "id_trainee=" + id!
+        let requestUrl = hostingUrl + "TrembleBackend/GetSessions"
         
         request(requestBody, url: requestUrl) {
             
             responseData in
             
             let json = JSON(responseData)
-            
             
             //Array of session info
             var sessionInfoArray = [ActiveSession]()
@@ -67,7 +67,6 @@ class ConnectionManager {
             let date = json["result_data"][0]["wave_date"].string!
             
             sessionInfoArray.append(ActiveSession(location: location, date: date))
-            
             
             completionHandler(sessionInfo: sessionInfoArray)
             
