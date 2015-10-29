@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5E064C1BE1EEF200B2E1BB /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E064B1BE1EEF200B2E1BB /* UserProfileViewController.swift */; };
 		BF7E54B51BE0C4C6008CC08F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */; };
 		C31559701BE0C0710056214B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315596F1BE0C0710056214B /* AppDelegate.swift */; };
 		C31559751BE0C0710056214B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31559731BE0C0710056214B /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF5E064B1BE1EEF200B2E1BB /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C315596C1BE0C0700056214B /* Tremble-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tremble-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C315596F1BE0C0710056214B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		C31559831BE0C1110056214B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF5E064B1BE1EEF200B2E1BB /* UserProfileViewController.swift */,
 				BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */,
 				C3DB09311BE0D2AE002F2174 /* SessionTableViewController.swift */,
 				C3DB09331BE0E311002F2174 /* rectangleView.swift */,
@@ -201,6 +204,7 @@
 				C31559911BE0C1320056214B /* Trainer.swift in Sources */,
 				C31559931BE0C1320056214B /* Zone.swift in Sources */,
 				C315598C1BE0C1320056214B /* ActiveSession.swift in Sources */,
+				BF5E064C1BE1EEF200B2E1BB /* UserProfileViewController.swift in Sources */,
 				C3DB09321BE0D2AE002F2174 /* SessionTableViewController.swift in Sources */,
 				C31559951BE0C13F0056214B /* ConnectionManager.swift in Sources */,
 				C31559701BE0C0710056214B /* AppDelegate.swift in Sources */,

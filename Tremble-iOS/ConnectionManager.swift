@@ -31,6 +31,35 @@ class ConnectionManager {
         
     }
     
+    func getUserProfile(completionHandler:(trainee:Trainee) -> ()) {
+        
+        let defaultData = NSUserDefaults.standardUserDefaults()
+        let id = defaultData.objectForKey("SISID")?.description
+        
+        let requestBody = "id_trainee=" + id!
+        let requestUrl = "http://localhost:8080/TrembleBackend/GetUserProfile"
+        
+        request(requestBody, url: requestUrl) {
+            
+            responseData in
+            
+            let traineeData = responseData.valueForKey("result_data")![0] as! NSDictionary
+            
+            var traineeProfile = Trainee()
+            
+            traineeProfile.firstname = (traineeData.valueForKey("first_name")?.description)!
+            traineeProfile.lastname = (traineeData.valueForKey("last_name")?.description)!
+            traineeProfile.mobile = (traineeData.valueForKey("mobile")?.description)!
+            traineeProfile.emial = (traineeData.valueForKey("email")?.description)!
+            traineeProfile.subject = (traineeData.valueForKey("subject")?.description)!
+            traineeProfile.grade = (traineeData.valueForKey("grade")?.description)!
+            
+            completionHandler(trainee: traineeProfile)
+            
+        }
+        
+    }
+    
     func request(requestBody:String, url:String, completionHandler: (responseData:NSDictionary) -> ()) {
         
         let request = NSMutableURLRequest()
@@ -49,5 +78,5 @@ class ConnectionManager {
             
         }
     }
-
+    
 }
