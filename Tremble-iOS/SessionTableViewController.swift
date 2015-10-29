@@ -8,8 +8,19 @@
 
 import UIKit
 
+class MySessionCell: UITableViewCell {
+ 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+}
+
+
 class SessionTableViewController: UITableViewController {
 
+    let manager = SessionConnection()
+    var mySessionInfo:[SessionInfo]?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +32,25 @@ class SessionTableViewController: UITableViewController {
         
         //self.navigationController!.view.drawRect(CGRectMake(89.4,199.8,200,100))
 
-        let lv = LoginViewController()
+     
+        manager.getUserSession { (sessionInfo) -> () in
         
+            print("I AM IN THE SESSION TABLE")
+            print(sessionInfo[0].location)
+            print(sessionInfo[0].date)
+            
+            self.mySessionInfo = sessionInfo
+            
+            //print("mySssionInfo: ")
+            //print(self.mySessionInfo![0].date)
+            
+            self.tableView.reloadData()
+            
+        }
 
 
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +67,55 @@ class SessionTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        
+        if self.mySessionInfo == nil {
+            return 0
+        }
+        
+        print("Session count:")
+        print(mySessionInfo!.count)
+        
+        return mySessionInfo!.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mySessionCell", forIndexPath: indexPath) as UITableViewCell!
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("mySessionCell", forIndexPath: indexPath)
 
-        // Configure the cell...
-       // cell.textLabel?.text = "hello"
+        if self.mySessionInfo != nil && self.mySessionInfo!.count >= indexPath.row {
+            
+            /*
+            mainLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 220.0, 15.0)] autorelease];
+            mainLabel.tag = MAINLABEL_TAG;
+            mainLabel.font = [UIFont systemFontOfSize:14.0];
+            mainLabel.textAlignment = UITextAlignmentRight;
+            mainLabel.textColor = [UIColor blackColor];
+            [cell.contentView addSubview:mainLabel];
+*/
+           let mainLabel = UILabel(frame: CGRectMake(0.0,100.0,220.0,30.0))
+           // mainLabel.tag = MAINLABEL_TAG
+            mainLabel.font = UIFont.systemFontOfSize(14.0)
+            // mainLabel.textAlignment = UITextAlignmentRight
+            mainLabel.textColor = UIColor.blackColor()
+            mainLabel.text = mySessionInfo![0].location
+            cell.contentView.addSubview(mainLabel)
+            
+            let dateLabel = UILabel(frame: CGRectMake(100.0,100.0,220.0,30.0))
+            // mainLabel.tag = MAINLABEL_TAG
+            dateLabel.font = UIFont.systemFontOfSize(14.0)
+            // mainLabel.textAlignment = UITextAlignmentRight
+            dateLabel.textColor = UIColor.blackColor()
+            dateLabel.text = mySessionInfo![0].date
+            cell.contentView.addSubview(dateLabel)
+            
+            
+        }
+        
+        
+        
+        
+      
 
         return cell
     }
