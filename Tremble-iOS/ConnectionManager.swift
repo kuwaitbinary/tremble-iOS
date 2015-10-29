@@ -19,42 +19,25 @@ class ConnectionManager {
             
             responseData in
             
-            var returnValue = true
+            let resultData = responseData.valueForKey("result_data")![0] as! NSDictionary
             
-            if responseData.valueForKey("flag")?.description == "false" {
-                returnValue = false
+            var returnValue = false
+            
+            if resultData.valueForKey("flag")?.description == "true" {
+                
+                returnValue = true
+                
+                let defaultData = NSUserDefaults.standardUserDefaults()
+                
+                defaultData.setValue((resultData.valueForKey("firstname")?.description)!, forKey: "name")
+                defaultData.setValue((resultData.valueForKey("mobile")?.description)!, forKey: "mobile")
+                defaultData.setValue((resultData.valueForKey("email")?.description)!, forKey: "email")
+                defaultData.setValue((resultData.valueForKey("subject")?.description)!, forKey: "subject")
+                defaultData.setValue((resultData.valueForKey("grade")?.description)!, forKey: "grade")
+                
             }
             
             completionHandler(validData: returnValue)
-            
-        }
-        
-    }
-    
-    func getUserProfile(completionHandler:(trainee:Trainee) -> ()) {
-        
-        let defaultData = NSUserDefaults.standardUserDefaults()
-        let id = defaultData.objectForKey("SISID")?.description
-        
-        let requestBody = "id_trainee=" + id!
-        let requestUrl = "http://localhost:8080/TrembleBackend/GetUserProfile"
-        
-        request(requestBody, url: requestUrl) {
-            
-            responseData in
-            
-            let traineeData = responseData.valueForKey("result_data")![0] as! NSDictionary
-            
-            var traineeProfile = Trainee()
-            
-            traineeProfile.firstname = (traineeData.valueForKey("first_name")?.description)!
-            traineeProfile.lastname = (traineeData.valueForKey("last_name")?.description)!
-            traineeProfile.mobile = (traineeData.valueForKey("mobile")?.description)!
-            traineeProfile.emial = (traineeData.valueForKey("email")?.description)!
-            traineeProfile.subject = (traineeData.valueForKey("subject")?.description)!
-            traineeProfile.grade = (traineeData.valueForKey("grade")?.description)!
-            
-            completionHandler(trainee: traineeProfile)
             
         }
         
