@@ -10,29 +10,26 @@ import Foundation
 
 class Trainee {
     
-    var firstname:String
-    var lastname:String
+    var name:String
     var mobile:String
-    var emial:String
+    var email:String
     var grade:String
     var subject:String
     
     init() {
-        self.firstname = ""
-        self.lastname = ""
+        self.name = ""
         self.grade = ""
         self.subject = ""
-        self.emial = ""
+        self.email = ""
         self.mobile = ""
     }
     
-    init(firstname:String, lastname:String, grade:String, subject:String, mobile:String, email:String) {
+    init(name:String, grade:String, subject:String, mobile:String, email:String) {
         
-        self.firstname = firstname
-        self.lastname = lastname
+        self.name = name
         self.grade = grade
         self.subject = subject
-        self.emial = email
+        self.email = email
         self.mobile = mobile
     }
     
