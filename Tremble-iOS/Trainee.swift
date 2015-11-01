@@ -15,6 +15,7 @@ class Trainee {
     var email:String
     var grade:String
     var subject:String
+    var password:String
     
     init() {
         self.name = ""
@@ -22,15 +23,16 @@ class Trainee {
         self.subject = ""
         self.email = ""
         self.mobile = ""
+        self.password = ""
     }
     
-    init(name:String, grade:String, subject:String, mobile:String, email:String) {
-        
+    init(name:String, grade:String, subject:String, mobile:String, email:String, password:String) {
         self.name = name
         self.grade = grade
         self.subject = subject
         self.email = email
         self.mobile = mobile
+        self.password = password
     }
     
 }

@@ -45,6 +45,20 @@ class ConnectionManager {
         
     }
     
+    func editProfile(trainee:Trainee) {
+        
+        let defaultData = NSUserDefaults.standardUserDefaults()
+        let id = defaultData.objectForKey("SISID")?.description
+        
+        let requestBody = "id_trainee=" + id! + "&name=" + trainee.name + "&mobile=" + trainee.mobile + "&email=" + trainee.email + "&subject=" + trainee.subject + "&grade=" + trainee.grade + "&password=" + trainee.password
+        let requestUrl = hostingUrl + "TrembleBackend/EditUserProfile"
+        
+        request(requestBody, url: requestUrl) {
+            responseData in
+        }
+        
+    }
+    
     func getUserSession(completionHandler:(sessionInfo:[ActiveSession]) -> ()) {
         
         let defaultData = NSUserDefaults.standardUserDefaults()

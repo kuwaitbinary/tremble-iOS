@@ -36,5 +36,5 @@ class UserProfileViewController: UIViewController {
         gradeOutlet.text = "Grade: " + grade!
         
     }
-    
+
 }

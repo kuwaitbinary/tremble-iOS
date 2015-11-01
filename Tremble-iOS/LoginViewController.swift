@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
                 
                 let defaultData = NSUserDefaults.standardUserDefaults()
                 defaultData.setValue(self.idOutlet.text, forKey: "SISID")
+                defaultData.setValue(self.passwordOutlet.text, forKey: "password")
                 
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                 let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserProfile") as UIViewController
