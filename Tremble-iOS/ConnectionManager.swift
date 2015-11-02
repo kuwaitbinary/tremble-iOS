@@ -59,7 +59,7 @@ class ConnectionManager {
         
     }
     
-    func getUserSession(completionHandler:(sessionInfo:[ActiveSession]) -> ()) {
+    func getUserSession(completionHandler:(sessionList:[ActiveSession]) -> ()) {
         
         let defaultData = NSUserDefaults.standardUserDefaults()
         let id = defaultData.objectForKey("SISID")?.description
@@ -71,18 +71,25 @@ class ConnectionManager {
             
             responseData in
             
-            let json = JSON(responseData)
+            let resultData = responseData.valueForKey("result_data") as! NSArray
             
-            //Array of session info
             var sessionInfoArray = [ActiveSession]()
             
-            //getting JSON Data
-            let location = json["result_data"][0]["location_name"].string!
-            let date = json["result_data"][0]["wave_date"].string!
+            for (var i = 0; i < resultData.count; i++) {
+                
+                let className = resultData[i]["class_name"]!!.description
+                let courseName = resultData[i]["course_name"]!!.description
+                let locationName = resultData[i]["location_name"]!!.description
+                let locationGPS = resultData[i]["location_gps"]!!.description
+                let zoneName = resultData[i]["zone"]!!.description
+                let trainerName = resultData[i]["trainer_name"]!!.description
+                let waveDate = resultData[i]["wave_date"]!!.description
+                
+                sessionInfoArray.append(ActiveSession(className: className, courseName: courseName, locationName: locationName, locationGPS: locationGPS, zoneName: zoneName, trainerName: trainerName, waveDate: waveDate))
+                
+            }
             
-            sessionInfoArray.append(ActiveSession(location: location, date: date))
-            
-            completionHandler(sessionInfo: sessionInfoArray)
+            completionHandler(sessionList: sessionInfoArray)
             
         }
         

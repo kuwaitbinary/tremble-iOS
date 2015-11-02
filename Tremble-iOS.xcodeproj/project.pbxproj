@@ -10,6 +10,7 @@
 		BF5E064C1BE1EEF200B2E1BB /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E064B1BE1EEF200B2E1BB /* UserProfileViewController.swift */; };
 		BF7E54B51BE0C4C6008CC08F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */; };
 		BFBC6D6A1BE5DEA5008EA146 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC6D691BE5DEA5008EA146 /* EditProfileViewController.swift */; };
+		BFBC6D6C1BE6119B008EA146 /* SessionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC6D6B1BE6119B008EA146 /* SessionDetailsViewController.swift */; };
 		C31559701BE0C0710056214B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315596F1BE0C0710056214B /* AppDelegate.swift */; };
 		C31559751BE0C0710056214B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31559731BE0C0710056214B /* Main.storyboard */; };
 		C31559771BE0C0710056214B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31559761BE0C0710056214B /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		BF5E064B1BE1EEF200B2E1BB /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFBC6D691BE5DEA5008EA146 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		BFBC6D6B1BE6119B008EA146 /* SessionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailsViewController.swift; sourceTree = "<group>"; };
 		C315596C1BE0C0700056214B /* Tremble-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tremble-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C315596F1BE0C0710056214B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C31559741BE0C0710056214B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				BF7E54B41BE0C4C6008CC08F /* LoginViewController.swift */,
 				C3DB09311BE0D2AE002F2174 /* SessionTableViewController.swift */,
 				BFBC6D691BE5DEA5008EA146 /* EditProfileViewController.swift */,
+				BFBC6D6B1BE6119B008EA146 /* SessionDetailsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C315598F1BE0C1320056214B /* SessClass.swift in Sources */,
 				C3B6CD521BE20A8400CEE56B /* SwiftyJSON.swift in Sources */,
 				C315598D1BE0C1320056214B /* Course.swift in Sources */,
+				BFBC6D6C1BE6119B008EA146 /* SessionDetailsViewController.swift in Sources */,
 				C31559921BE0C1320056214B /* WavaDate.swift in Sources */,
 				C315598E1BE0C1320056214B /* Location.swift in Sources */,
 				C31559911BE0C1320056214B /* Trainer.swift in Sources */,

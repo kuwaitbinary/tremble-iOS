@@ -10,31 +10,36 @@ import Foundation
 
 class ActiveSession {
     
-//    var idSession:Int
-//    
-//    init (idSession:Int) {
-//        
-//        self.idSession = idSession
-//        
-//    }
+    var className:String
+    var courseName:String
+    var locationName:String
+    var locationGPS:String
+    var zoneName:String
+    var trainerName:String
+    var waveDate:String
     
-    
-    
-    var location: String
-    var date: String
-    
-    init(){
-        location = ""
-        date = ""
-    }
-    
-    init (location:String, date:String ) {
+    init() {
         
-        self.location = location
-        self.date = date
+        className = ""
+        courseName = ""
+        locationName = ""
+        locationGPS = ""
+        zoneName = ""
+        trainerName = ""
+        waveDate = ""
         
     }
-
     
+    init(className:String, courseName:String, locationName:String, locationGPS:String, zoneName:String, trainerName:String, waveDate:String) {
+        
+        self.className = className
+        self.courseName = courseName
+        self.locationName = locationName
+        self.locationGPS = locationGPS
+        self.zoneName = zoneName
+        self.trainerName = trainerName
+        self.waveDate = waveDate
+        
+    }
     
 }
