@@ -45,6 +45,17 @@ class ConnectionManager {
         
     }
     
+    func forgetPassword(id:String) {
+        
+        let requestBody = "id_trainee=" + id
+        let requestUrl = hostingUrl + "TrembleBackend/ForgetPassword"
+        
+        request(requestBody, url: requestUrl) {
+            responseData in
+        }
+        
+    }
+    
     func editProfile(trainee:Trainee) {
         
         let defaultData = NSUserDefaults.standardUserDefaults()

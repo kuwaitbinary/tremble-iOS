@@ -17,6 +17,14 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var subjectOutlet: UILabel!
     @IBOutlet weak var gradeOutlet: UILabel!
     
+    @IBAction func logoutAction(sender: AnyObject) {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginScreen") as UIViewController
+        self.presentViewController(ViewController, animated: true, completion: nil)
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         let defaultData = NSUserDefaults.standardUserDefaults()

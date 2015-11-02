@@ -20,6 +20,9 @@ class SessionDetailsViewController: UIViewController {
     @IBOutlet weak var trainerNameOutlet: UILabel!
     @IBOutlet weak var waveDateOutlet: UILabel!
     
+    @IBAction func openMapAction(sender: AnyObject) {
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         classNameOutlet.text = session.className
@@ -31,5 +34,5 @@ class SessionDetailsViewController: UIViewController {
         waveDateOutlet.text = session.waveDate
         
     }
-
+    
 }

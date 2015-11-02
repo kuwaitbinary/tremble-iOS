@@ -26,7 +26,7 @@ class EditProfileViewController: UIViewController {
         
         if validInput() {
          
-            let trainee = Trainee(name: nameOutlet.text!, grade: gradeOutlet.text!, subject: subjectOutlet.text!, mobile: "+971" + mobilePhoneOutlet.text!, email: emailOutlet.text!, password: newPasswordOutlet.text!)
+            let trainee = Trainee(name: nameOutlet.text!, grade: gradeOutlet.text!, subject: subjectOutlet.text!, mobile: mobilePhoneOutlet.text!, email: emailOutlet.text!, password: newPasswordOutlet.text!)
             
             let manager = ConnectionManager()
             
@@ -40,8 +40,7 @@ class EditProfileViewController: UIViewController {
             defaultData.setValue(subjectOutlet.text, forKey: "subject")
             defaultData.setValue(gradeOutlet.text, forKey: "grade")
             
-            self.dismissViewControllerAnimated(true) { () -> Void in
-            }
+            navigationController?.popViewControllerAnimated(true)
             
         } else {
             
@@ -51,11 +50,6 @@ class EditProfileViewController: UIViewController {
             
         }
         
-    }
-    
-    @IBAction func cancelAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true) { () -> Void in
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
