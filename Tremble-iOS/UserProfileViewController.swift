@@ -19,9 +19,19 @@ class UserProfileViewController: UIViewController {
     
     @IBAction func logoutAction(sender: AnyObject) {
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginScreen") as UIViewController
-        self.presentViewController(ViewController, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Logout", message: "Are You Sure You Want to Logout?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction (title: "Yes", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginScreen") as UIViewController
+            self.presentViewController(ViewController, animated: true, completion: nil)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -36,12 +46,12 @@ class UserProfileViewController: UIViewController {
         let subject = defaultData.objectForKey("subject")?.description
         let grade = defaultData.objectForKey("grade")?.description
         
-        idOutlet.text = "SISID:" + id!
-        nameOutlet.text = "Name: " + name!
-        emailOutlet.text = "Email: " + email!
-        mobileOutlet.text = "Mobile: " + mobie!
-        subjectOutlet.text = "Subject: " + subject!
-        gradeOutlet.text = "Grade: " + grade!
+        idOutlet.text = id!
+        nameOutlet.text = name!
+        emailOutlet.text = email!
+        mobileOutlet.text = mobie!
+        subjectOutlet.text = subject!
+        gradeOutlet.text = grade!
         
     }
 

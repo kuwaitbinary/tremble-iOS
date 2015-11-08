@@ -1,14 +1,14 @@
 //
-//  ActiveSession.swift
-//  Tremble
+//  SessionDetails.swift
+//  Tremble-iOS
 //
-//  Created by Abduallah Al Mashmoum on 10/27/15.
+//  Created by Omar Alobaid on 11/4/15.
 //  Copyright © 2015 Techzone. All rights reserved.
 //
 
 import Foundation
 
-class ActiveSession {
+class SessionDetails {
     
     var className:String
     var courseName:String

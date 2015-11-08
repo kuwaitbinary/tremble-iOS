@@ -12,33 +12,46 @@ class LoginViewController: UIViewController {
     
     private let manager = ConnectionManager()
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
     @IBOutlet weak var idOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     
     @IBAction func loginAction(sender: AnyObject) {
         
-        //check if the there is empty fields
-        
-        manager.login(idOutlet.text!, password: passwordOutlet.text!) { (validData) -> () in
+        if idOutlet.text == "" || passwordOutlet.text == "" {
             
-            if validData {
+            let alert = UIAlertController(title: "Alert", message: "Please fill the empty fields.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            manager.login(idOutlet.text!, password: passwordOutlet.text!) { (validData) -> () in
                 
-                let defaultData = NSUserDefaults.standardUserDefaults()
-                defaultData.setValue(self.idOutlet.text, forKey: "SISID")
-                defaultData.setValue(self.passwordOutlet.text, forKey: "password")
-                
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeScreen") as UIViewController
-                
-                let navigationController = UINavigationController(rootViewController: ViewController)
-                
-                self.presentViewController(navigationController, animated: true, completion: nil)
-                
-            } else {
-                
-                let alert = UIAlertController(title: "Alert", message: "Not Valid Login", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                if validData {
+                    
+                    let defaultData = NSUserDefaults.standardUserDefaults()
+                    defaultData.setValue(self.idOutlet.text, forKey: "SISID")
+                    defaultData.setValue(self.passwordOutlet.text, forKey: "password")
+                    
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeScreen") as UIViewController
+                    
+                    let navigationController = UINavigationController(rootViewController: ViewController)
+                    
+                    self.presentViewController(navigationController, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    let alert = UIAlertController(title: "Alert", message: "Not Valid Login", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                }
                 
             }
             

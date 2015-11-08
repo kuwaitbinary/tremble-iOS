@@ -10,7 +10,7 @@ import UIKit
 
 class SessionTableViewController: UITableViewController {
 
-    private var sessionList:[ActiveSession]?
+    private var sessionList:[SessionDetails]?
     private var selectedSession = 0
 
     override func viewDidAppear(animated: Bool) {
@@ -51,7 +51,7 @@ class SessionTableViewController: UITableViewController {
         
         cell.textLabel!.numberOfLines = 2
         
-        cell.textLabel?.text = "Location: " + sessionList![indexPath.row].locationName + "\n" + "Date: " + sessionList![indexPath.row].waveDate
+        cell.textLabel?.text = "Location: " + sessionList![indexPath.row].locationName + "\n" + "Course: " + sessionList![indexPath.row].courseName
         
         return cell
         
@@ -72,32 +72,5 @@ class SessionTableViewController: UITableViewController {
         sessionDetailsViewController.session = sessionList![selectedSession]
         
     }
-
-
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("mySessionCell", forIndexPath: indexPath)
-//
-//        if self.mySessionInfo != nil && self.mySessionInfo!.count >= indexPath.row {
-//            
-//
-//           let mainLabel = UILabel(frame: CGRectMake(0.0,100.0,220.0,30.0))
-//            mainLabel.font = UIFont.systemFontOfSize(14.0)
-//            mainLabel.textColor = UIColor.blackColor()
-//            mainLabel.text = mySessionInfo![0].location
-//            cell.contentView.addSubview(mainLabel)
-//            
-//            let dateLabel = UILabel(frame: CGRectMake(100.0,100.0,220.0,30.0))
-//            dateLabel.font = UIFont.systemFontOfSize(14.0)
-//            dateLabel.textColor = UIColor.blackColor()
-//            dateLabel.text = mySessionInfo![0].date
-//            cell.contentView.addSubview(dateLabel)
-//            
-//            
-//        }
-//     
-//
-//        return cell
-//    }
 
 }

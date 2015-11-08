@@ -10,7 +10,7 @@ import Foundation
 
 class ConnectionManager {
     
-    private let hostingUrl = "http://localhost:8080/"
+    private let hostingUrl = "http://192.168.1.143:8080/"
     
     func login(id:String, password:String, completionHandler:(validData:Bool) -> ()) {
         
@@ -70,7 +70,7 @@ class ConnectionManager {
         
     }
     
-    func getUserSession(completionHandler:(sessionList:[ActiveSession]) -> ()) {
+    func getUserSession(completionHandler:(sessionList:[SessionDetails]) -> ()) {
         
         let defaultData = NSUserDefaults.standardUserDefaults()
         let id = defaultData.objectForKey("SISID")?.description
@@ -84,10 +84,11 @@ class ConnectionManager {
             
             let resultData = responseData.valueForKey("result_data") as! NSArray
             
-            var sessionInfoArray = [ActiveSession]()
+            var sessionInfoArray = [SessionDetails]()
             
             for (var i = 0; i < resultData.count; i++) {
                 
+                let evaluationFlag = resultData[i]["isEvaluationDone"]!!.description
                 let className = resultData[i]["class_name"]!!.description
                 let courseName = resultData[i]["course_name"]!!.description
                 let locationName = resultData[i]["location_name"]!!.description
@@ -96,12 +97,80 @@ class ConnectionManager {
                 let trainerName = resultData[i]["trainer_name"]!!.description
                 let waveDate = resultData[i]["wave_date"]!!.description
                 
-                sessionInfoArray.append(ActiveSession(className: className, courseName: courseName, locationName: locationName, locationGPS: locationGPS, zoneName: zoneName, trainerName: trainerName, waveDate: waveDate))
+                let classId = resultData[i]["id_class"]!!.description
+                let sessionId = resultData[i]["id_session"]!!.description
+                
+                defaultData.setValue(evaluationFlag, forKey: "evaluationFlag")
+                defaultData.setValue(classId, forKey: "classId")
+                defaultData.setValue(sessionId, forKey: "sessionId")
+                defaultData.setValue(locationGPS, forKey: "location")
+                
+                sessionInfoArray.append(SessionDetails(className: className, courseName: courseName, locationName: locationName, locationGPS: locationGPS, zoneName: zoneName, trainerName: trainerName, waveDate: waveDate))
                 
             }
             
             completionHandler(sessionList: sessionInfoArray)
             
+        }
+        
+    }
+    
+    func getQuestions(completionHandler:(numberOfRows:[Int], questionList:[Question]) -> ()) {
+        
+        let requestBody = ""
+        let requestUrl = hostingUrl + "TrembleBackend/GetQuestions"
+        
+        request(requestBody, url: requestUrl) {
+            responseData in
+            
+            let sizeOfSectionOne = Int((responseData.valueForKey("first_section")?.description)!)
+            let sizeOfSectionTwo = Int((responseData.valueForKey("second_section")?.description)!)
+            let sizeOfSectionThird = Int((responseData.valueForKey("third_section")?.description)!)
+            let sizeOfSectionFourth = Int((responseData.valueForKey("fourth_section")?.description)!)
+            
+            let numberOfRows:[Int] = [sizeOfSectionOne!, sizeOfSectionTwo!, sizeOfSectionThird!, sizeOfSectionFourth!]
+            
+            let resultData = responseData.valueForKey("result_data") as! NSArray
+            
+            var questionList = [Question]()
+            
+            for (var i = 0; i < resultData.count; i++) {
+                
+                let id = Int(resultData[i]["question_id"]!!.description)
+                let section = Int(resultData[i]["section"]!!.description)
+                let question = resultData[i]["question"]!!.description
+                
+                questionList.append(Question(id: id!, section: section!, question: question, answer: 0))
+                
+            }
+            
+            completionHandler(numberOfRows: numberOfRows, questionList: questionList)
+            
+        }
+        
+    }
+    
+    func evaluationAnswers(questionList:[Question]) {
+        
+        let defaultData = NSUserDefaults.standardUserDefaults()
+        let id = defaultData.objectForKey("SISID")?.description
+        let classId = defaultData.objectForKey("classId")?.description
+        let sessionId = defaultData.objectForKey("sessionId")?.description
+        
+        var requestBody = "id_trainee=" + id!
+        requestBody += "&id_class=" + classId!
+        requestBody += "&id_session=" + sessionId!
+        
+        let requestUrl = hostingUrl + "TrembleBackend/EvaluationAnswers"
+        
+        for(var i = 0; i < questionList.count; i++) {
+            
+            requestBody += "&answers[]=" + questionList[i].answer.description
+            
+        }
+        
+        request(requestBody, url: requestUrl) {
+            responseData in
         }
         
     }

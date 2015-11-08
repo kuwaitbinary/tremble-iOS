@@ -10,6 +10,11 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
     private var errorMessage = ""
 
     @IBOutlet weak var nameOutlet: UITextField!
